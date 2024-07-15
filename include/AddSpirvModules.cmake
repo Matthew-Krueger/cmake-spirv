@@ -26,11 +26,11 @@ function(add_spirv_modules TARGET_NAME)
 	elseif(NOT IS_ABSOLUTE ${ARG_BINARY_DIR})
 		set(ARG_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/${ARG_BINARY_DIR})
 		endif()
-		
- 	# Create the output directory if it doesn't exist
-        file(MAKE_DIRECTORY ${ARG_BINARY_DIR})
 
-        # Define custom compilation commands
+	# Create the output directory if it doesn't exist
+	file(MAKE_DIRECTORY ${ARG_BINARY_DIR})
+
+	# Define custom compilation commands
 	foreach(FILE IN LISTS ARG_SOURCES)
 		set(SOURCE_FILE ${ARG_SOURCE_DIR}/${FILE})
 		set(BINARY_FILE ${ARG_BINARY_DIR}/${FILE}.spv)
